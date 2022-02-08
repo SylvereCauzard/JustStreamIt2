@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- tête de la page -->
+    <meta charset="utf-8" />
+    <title>JustStreamIt</title>
+    <link rel="stylesheet" href="films.css"/>
+    <script src="film.js" async></script>
+</head>
+    <body>
+    <header class="top">
+        <h1 class="titletop">JustStreamIt</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#title_category">Catégories</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="my_modal" class="modal">
+        <div class="modal_content">
+            <div class="modal_header">
+                <span class="close" onclick="closeTheModal()">&times;</span>
+                <h2 class="modal_movie_title">null</h2>
+                <div class="movie_image_container">
+                    <img class="movie_image" src="null" alt="">
+                </div>
+            </div>
+            <div id="model_body">
+                <div class="genres"></div>
+                <div class="year"></div>
+                <div class="rated"></div>
+                <div class="imdb_score"></div>
+                <div class="directors"></div>
+                <div class="actors"></div>
+                <div class="duration"></div>
+                <div class="countries"></div>
+                <div class="worldwide_gross_income"></div>
+                <div class="long_description">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box1">
+        <!-- best movie uploaded by JS -->
+    </div>         
+
+    <div class="container">
+        <div class="color_box">
+            <h2 id="best_movie">Best Movies</h2>
+            <div class="carousel1">
+                <!-- best movies uploaded by JS -->
+            </div>
+        </div>
+
+        <div class="color_box">
+            <h2 class="title_category">Action</h2>
+            <div class="carousel2">
+                <!-- best movies uploaded by JS -->
+            </div>
+        </div>
+
+        <div class="color_box">
+            <h2 class="title_category">Horror</h2>
+            <div class="carousel3">
+                <!-- best movies uploaded by JS -->
+            </div>
+        </div>
+
+        <div class="color_box">
+            <h2 class="title_category">Animation</h2>
+            <div class="carousel4">
+                <!-- best movies uploaded by JS -->
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
