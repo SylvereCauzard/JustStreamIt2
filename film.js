@@ -17,7 +17,7 @@ async function getBestMovies(genre, moviesNumber = 8)
 }
 
 function createImgElements(location)
-// Create four div with "element" class at the location
+// Create div with "element" class at the location
 {
     let div = document.createElement("div");
     div.classList.add("element");
@@ -34,7 +34,7 @@ function createImgElements(location)
         let div = document.createElement("div");
         div.classList.add("element");
         let img = document.createElement("img");
-        img.setAttribute("id", "cover" + String(i + 1));
+        img.setAttribute("class", "js-cover");
         img.setAttribute("onclick", "openTheModal()");
         img.setAttribute("src", ``)
         div.appendChild(img);
@@ -52,7 +52,7 @@ function createImgElements(location)
     div.appendChild(button_next);
     location.appendChild(div);
 
-    let movies_list = Array.from(location.querySelectorAll("[id^='cover']"));
+    let movies_list = Array.from(location.querySelectorAll(".js-cover"));
     hideElements(movies_list);
 
     location.getElementsByClassName("buttonnext")[0].onclick = function (){slideNext(movies_list, location);};
@@ -148,7 +148,7 @@ function slidePrev(movies_list, location)
 function slideNext(movies_list, location)
 // Slide next image
 {
-    movies_list = Array.from(location.querySelectorAll("[id^='cover']"));
+    movies_list = Array.from(location.querySelectorAll(".js-cover"));
     for (let step = 7; step > 0; step--) {
         movies_list = swapNodes(movies_list[step], movies_list[0], location);
     }
@@ -162,7 +162,7 @@ function swapNodes(a, b, location)
     let asibling = a.nextSibling === b ? a : a.nextSibling; // var = Condition ? Si vrai : Si faux
     b.parentNode.insertBefore(a, b);
     aparent.insertBefore(b, asibling);
-    let elements_location = Array.from(location.querySelectorAll("[id^='cover']"));
+    let elements_location = Array.from(location.querySelectorAll(".js-cover"));
     return elements_location;
 }
 
@@ -210,10 +210,10 @@ function closeTheModal()
 //display movie(s)
 const MAIN_URL = "http://localhost:8000/api/v1/titles/";
 let best_movie_location = document.getElementsByClassName("box1")[0];
-let best_carousel_movies_location = document.getElementsByClassName("carousel1")[0];
-let best_carousel_action_location = document.getElementsByClassName("carousel2")[0];
-let best_carousel_horror_location = document.getElementsByClassName("carousel3")[0];
-let best_carousel_animation_location = document.getElementsByClassName("carousel4")[0];
+let best_carousel_movies_location = document.getElementById("carousel1");
+let best_carousel_action_location = document.getElementById("carousel2");
+let best_carousel_horror_location = document.getElementById("carousel3");
+let best_carousel_animation_location = document.getElementById("carousel4");
 
 let best_movie = createBestMovieElement(best_movie_location);
 let best_movies_elements = createImgElements(best_carousel_movies_location);
